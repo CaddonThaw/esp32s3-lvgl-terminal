@@ -87,6 +87,7 @@ void serial_task(void *pt);
 void time_task(void *pt);
 void music_task(void *pt);
 void mic_task(void *pt);
+
 void setup()
 { 
     Serial.begin( 115200 ); /* prepare for possible serial debug */
@@ -95,11 +96,11 @@ void setup()
     initSD();
     initmusic();
     initmic2();
-    
+
     ui_init();     
-    lv_100ask_2048_simple_test();
+    // lv_100ask_2048_simple_test();
+    ui_Game_screen_init();
     init_clear();
-     
     xTaskCreatePinnedToCore(lvgl_task, "lvgl_task", 1024*15, NULL, 2, NULL, 1);
     initWiFi();
     init_clear();

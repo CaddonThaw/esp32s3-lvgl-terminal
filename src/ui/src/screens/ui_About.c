@@ -23,13 +23,6 @@ lv_obj_set_y( ui_AboutBackToMain, 8 );
 lv_color_t bg_color = lv_palette_lighten(LV_PALETTE_LIGHT_BLUE, 5);
 lv_color_t fg_color = lv_palette_darken(LV_PALETTE_BLUE, 4);
 
-const char* data = "https://space.bilibili.com/455474218";
-lv_obj_t * qr = lv_qrcode_create(ui_About,58,fg_color, bg_color);
-lv_qrcode_update(qr,data,strlen(data));
-lv_obj_set_x( qr, -125 );
-lv_obj_set_y( qr, 28 );
-lv_obj_set_align( qr, LV_ALIGN_CENTER );
-
 ui_Image2 = lv_img_create(ui_About);
 lv_img_set_src(ui_Image2, &ui_img_123_png);
 lv_obj_set_width( ui_Image2, LV_SIZE_CONTENT);  /// 1
@@ -110,14 +103,14 @@ lv_obj_add_flag( ui_Image6, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_clear_flag( ui_Image6, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
 ui_LabelAbout4 = ui_LabelAbout_create(ui_About);
-lv_obj_set_width( ui_LabelAbout4, 244);
-lv_obj_set_height( ui_LabelAbout4, 44);
-lv_obj_set_x( ui_LabelAbout4, 37 );
-lv_obj_set_y( ui_LabelAbout4, 62 );
-lv_obj_set_align( ui_LabelAbout4, LV_ALIGN_CENTER );
-lv_label_set_text(ui_LabelAbout4,"IC:MAX98357,MAX9814,ILI9341,     CST816S");
-lv_obj_set_style_text_color(ui_LabelAbout4, lv_color_hex(0x6EC4C6), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_LabelAbout4, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_width(ui_LabelAbout4, 244);
+lv_obj_set_height(ui_LabelAbout4, 44);
+lv_obj_set_x(ui_LabelAbout4, 37);
+lv_obj_set_y(ui_LabelAbout4, 62);
+lv_obj_set_align(ui_LabelAbout4, LV_ALIGN_CENTER);
+lv_label_set_text(ui_LabelAbout4, "IC:NS4168,INMP441,ILI9341,             CST816S");
+lv_obj_set_style_text_color(ui_LabelAbout4, lv_color_hex(0x6EC4C6), LV_PART_MAIN | LV_STATE_DEFAULT);
+lv_obj_set_style_text_opa(ui_LabelAbout4, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 ui_LabelAbout5 = ui_LabelAbout_create(ui_About);
 lv_obj_set_width( ui_LabelAbout5, 226);
@@ -169,15 +162,25 @@ lv_obj_add_flag( ui_Image9, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_clear_flag( ui_Image9, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
 ui_Label9 = lv_label_create(ui_About);
-lv_obj_set_width( ui_Label9, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Label9, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Label9, 27 );
-lv_obj_set_y( ui_Label9, -93 );
-lv_obj_set_align( ui_Label9, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Label9,"https://space.bilibili.com/455474218");
-lv_obj_set_style_text_color(ui_Label9, lv_color_hex(0xFF719C), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Label9, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_width(ui_Label9, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_height(ui_Label9, LV_SIZE_CONTENT);    /// 1
+lv_obj_set_x(ui_Label9, 19);
+lv_obj_set_y(ui_Label9, -95);
+lv_obj_set_align(ui_Label9, LV_ALIGN_CENTER);
+lv_label_set_text(ui_Label9, "抖音:嵌入式小黑子\nCSDN:热爱嵌入式的小佳同学");
+lv_obj_set_style_text_color(ui_Label9, lv_color_hex(0xFF719C), LV_PART_MAIN | LV_STATE_DEFAULT);
+lv_obj_set_style_text_opa(ui_Label9, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Label9, &ui_font_AlimamaShuHeiFont16Bpp4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+ui_Image1 = lv_img_create(ui_About);
+lv_img_set_src(ui_Image1, &ui_img_456_png);
+lv_obj_set_width(ui_Image1, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_height(ui_Image1, LV_SIZE_CONTENT);    /// 1
+lv_obj_set_x(ui_Image1, -125);
+lv_obj_set_y(ui_Image1, 34);
+lv_obj_set_align(ui_Image1, LV_ALIGN_CENTER);
+lv_obj_add_flag(ui_Image1, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+lv_obj_clear_flag(ui_Image1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
 lv_obj_add_event_cb(ui_AboutBackToMain, ui_event_AboutBackToMain, LV_EVENT_ALL, NULL);
 

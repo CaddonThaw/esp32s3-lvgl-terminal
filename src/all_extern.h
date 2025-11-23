@@ -34,7 +34,10 @@ extern bool baidu_audio_flag;
 extern const char *baidu_audio_host;
 
 extern bool serial_flag;
-
 extern char * rate_buf;
+
+extern bool game_yang_flag;
+extern bool game_2048_flag;
+extern bool game_xiaole_flag;
 
 #endif

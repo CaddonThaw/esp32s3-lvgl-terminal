@@ -70,6 +70,21 @@ void getmusic(void)//lv_timer_t * timer
                 audio.connecttohost(baidu_audio_host);
                 // Serial.printf("%s\n", baidu_audio_host);
             }
+            else if(game_yang_flag == 1)
+            {
+                audio.connecttoFS(SD, "普通Disco-羊了个羊.mp3");
+                // Serial.printf("yang_music.mp3\n");
+            }
+            else if(game_2048_flag == 1)
+            {
+                audio.connecttoFS(SD, "哈基米起床-哈基米.mp3");
+                // Serial.printf("2048_music.mp3\n");
+            }
+            else if(game_xiaole_flag == 1)
+            {
+                audio.connecttoFS(SD, "123我哈你-哈基米.mp3");
+                // Serial.printf("xiaoxiaole_music.mp3\n");
+            }
             else
             {
                 audio.connecttoFS(SD, songname);

@@ -162,9 +162,29 @@ lv_obj_t *ui_LabelNoWiFi;
 
 // SCREEN: ui_Game
 void ui_Game_screen_init(void);
-lv_obj_t *ui_Game;
-void ui_event_GameBackToMain( lv_event_t * e);
-lv_obj_t *ui_GameBackToMain;
+lv_obj_t * ui_Game;
+void ui_event_GameBackToMain(lv_event_t * e);
+lv_obj_t * ui_GameBackToMain;
+void ui_event_Game2048Button(lv_event_t * e);
+lv_obj_t * ui_Game2048Button;
+lv_obj_t * ui_Game2048Label;
+void ui_event_GameYangButton(lv_event_t * e);
+lv_obj_t * ui_GameYangButton;
+lv_obj_t * ui_GameYangLabel;
+void ui_event_GameXiaoLeButton(lv_event_t * e);
+lv_obj_t * ui_GameXiaoLeButton;
+lv_obj_t * ui_GameXiaoLabel;
+void ui_event_GamePvzButton(lv_event_t * e);
+lv_obj_t * ui_GamePvzButton;
+lv_obj_t * ui_GamePvzLabel;
+// CUSTOM VARIABLES
+
+// SCREEN: ui_GameSon
+void ui_GameSon_screen_init(void);
+lv_obj_t * ui_GameSon;
+void ui_event_GameSonBackToGame(lv_event_t * e);
+lv_obj_t * ui_GameSonBackToGame;
+// CUSTOM VARIABLES
 
 // SCREEN: ui_Cal
 void ui_Cal_screen_init(void);
@@ -195,6 +215,7 @@ lv_obj_t *ui_Image7;
 lv_obj_t *ui_Image8;
 lv_obj_t *ui_Image9;
 lv_obj_t *ui_Label9;
+lv_obj_t *ui_Image1;
 lv_obj_t *ui____initial_actions0;
 const lv_img_dsc_t *ui_imgset_chatgpt_[1] = {&ui_img_chatgpt_24_png};
 const lv_img_dsc_t *ui_imgset_wifi[2] = {&ui_img_wifi1_png, &ui_img_wifi2_png};
@@ -526,6 +547,86 @@ if ( event_code == LV_EVENT_CLICKED) {
 }
 }
 
+#include "lvgl_games/lv_games.h"
+
+void ui_event_Game2048Button(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_GameSon, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_GameSon_screen_init);
+        _ui_screen_delete(&ui_Game);
+        ui_gameson_clear();
+        lv_100ask_2048_simple_test();
+        start_flag=1;play_flag = 1;
+        game_2048_flag = 1;
+        if(lv_obj_has_state(ui_StartMusic, LV_STATE_CHECKED))
+        {
+            lv_obj_clear_state(ui_StartMusic, LV_STATE_CHECKED);
+        } 
+    }
+}
+
+void ui_event_GameYangButton(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_GameSon, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_GameSon_screen_init);
+        _ui_screen_delete(&ui_Game);
+        ui_gameson_clear();
+        yang_game();
+        start_flag=1;play_flag = 1;
+        game_yang_flag = 1;
+        if(lv_obj_has_state(ui_StartMusic, LV_STATE_CHECKED))
+        {
+            lv_obj_clear_state(ui_StartMusic, LV_STATE_CHECKED);
+        }         
+    }
+}
+
+void ui_event_GameXiaoLeButton(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_GameSon, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_GameSon_screen_init);
+        _ui_screen_delete(&ui_Game);
+        ui_gameson_clear();
+        xiaoxiaole();
+        start_flag=1;play_flag = 1;
+        game_xiaole_flag = 1;
+        if(lv_obj_has_state(ui_StartMusic, LV_STATE_CHECKED))
+        {
+            lv_obj_clear_state(ui_StartMusic, LV_STATE_CHECKED);
+        }   
+    }
+}
+
+void ui_event_GamePvzButton(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_GameSon, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_GameSon_screen_init);
+        _ui_screen_delete(&ui_Game);
+    }
+}
+
+void ui_event_GameSonBackToGame(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_Game_screen_init);
+        _ui_screen_delete(&ui_GameSon);
+        play_flag = 0;
+        game_yang_flag = 0;
+        game_2048_flag = 0;
+        game_xiaole_flag = 0;
+    }
+}
+
 ///////////////////// SCREENS ////////////////////
 
 void ui_init( void )
@@ -543,6 +644,7 @@ ui_GPT_screen_init();
 ui_Game_screen_init();
 ui_Cal_screen_init();
 ui_About_screen_init();
+ui_GameSon_screen_init();
 ui____initial_actions0 = lv_obj_create(NULL);
 lv_disp_load_scr( ui_Main);
 }

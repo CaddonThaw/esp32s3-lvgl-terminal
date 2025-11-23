@@ -21,8 +21,6 @@
 #include <Audio.h>
 #include <SD.h>
 
-#include "lv_100ask_2048/lv_100ask_2048.h"
-
 #include <ui/src/ui.h>
 #include <my_gui.h>
 

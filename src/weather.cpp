@@ -5,8 +5,8 @@ struct tm timeinfo;
 
 //获取天气
 String url = "https://api.seniverse.com/v3/weather/now.json";
-String key = "S8xIEsKg136Znmn-A";
-String locations = "襄阳";
+String key = "SHdGnMJ4MzuCuy0-L";
+String locations = "深圳";
 String language = "zh-Hans";
 String unit = "c";
 

@@ -161,9 +161,26 @@ extern lv_obj_t *ui_LabelGPTSwitch;
 extern lv_obj_t *ui_LabelNoWiFi;
 // SCREEN: ui_Game
 void ui_Game_screen_init(void);
-extern lv_obj_t *ui_Game;
-void ui_event_GameBackToMain( lv_event_t * e);
-extern lv_obj_t *ui_GameBackToMain;
+extern lv_obj_t * ui_Game;
+void ui_event_GameBackToMain(lv_event_t * e);
+extern lv_obj_t * ui_GameBackToMain;
+void ui_event_Game2048Button(lv_event_t * e);
+extern lv_obj_t * ui_Game2048Button;
+extern lv_obj_t * ui_Game2048Label;
+void ui_event_GameYangButton(lv_event_t * e);
+extern lv_obj_t * ui_GameYangButton;
+extern lv_obj_t * ui_GameYangLabel;
+void ui_event_GameXiaoLeButton(lv_event_t * e);
+extern lv_obj_t * ui_GameXiaoLeButton;
+extern lv_obj_t * ui_GameXiaoLabel;
+void ui_event_GamePvzButton(lv_event_t * e);
+extern lv_obj_t * ui_GamePvzButton;
+extern lv_obj_t * ui_GamePvzLabel;
+// SCREEN: ui_GameSon
+void ui_GameSon_screen_init(void);
+extern lv_obj_t * ui_GameSon;
+void ui_event_GameSonBackToGame(lv_event_t * e);
+extern lv_obj_t * ui_GameSonBackToGame;
 // SCREEN: ui_Cal
 void ui_Cal_screen_init(void);
 extern lv_obj_t *ui_Cal;
@@ -191,6 +208,7 @@ extern lv_obj_t *ui_Image7;
 extern lv_obj_t *ui_Image8;
 extern lv_obj_t *ui_Image9;
 extern lv_obj_t *ui_Label9;
+extern lv_obj_t *ui_Image1;
 extern lv_obj_t *ui____initial_actions0;
 
 LV_IMG_DECLARE( ui_img_wifi2_png);   // assets\wifi2.png
@@ -237,6 +255,7 @@ LV_IMG_DECLARE( ui_img_arduino_png);   // assets\arduino.png
 LV_IMG_DECLARE( ui_img_966728820);   // assets\赞.png
 LV_IMG_DECLARE( ui_img_1219345095);   // assets\投币激活@2x.png
 LV_IMG_DECLARE( ui_img_1965006549);   // assets\收藏.png
+LV_IMG_DECLARE(ui_img_456_png);    // assets/456.png
 
 LV_FONT_DECLARE( ui_font_AlimamaFont32Bpp4);
 LV_FONT_DECLARE( ui_font_AlimamaShuHeiFont16Bpp4);
