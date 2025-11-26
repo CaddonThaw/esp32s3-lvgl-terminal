@@ -17,6 +17,7 @@ extern "C" {
 #include "lv_100ask_2048/game2048.h"
 #include "yang/yang.h"
 #include "xiaoxiaole/xiaoxiaole.h"
+#include "pvz/pvz.h"
 
 void ui_gameson_init(void);
 void ui_gameson_clear(void);

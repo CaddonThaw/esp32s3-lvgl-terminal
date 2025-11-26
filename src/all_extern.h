@@ -39,5 +39,6 @@ extern char * rate_buf;
 extern bool game_yang_flag;
 extern bool game_2048_flag;
 extern bool game_xiaole_flag;
+extern bool game_pvz_flag;
 
 #endif

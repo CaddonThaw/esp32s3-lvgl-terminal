@@ -73,17 +73,18 @@ void getmusic(void)//lv_timer_t * timer
             else if(game_yang_flag == 1)
             {
                 audio.connecttoFS(SD, "普通Disco-羊了个羊.mp3");
-                // Serial.printf("yang_music.mp3\n");
             }
             else if(game_2048_flag == 1)
             {
                 audio.connecttoFS(SD, "哈基米起床-哈基米.mp3");
-                // Serial.printf("2048_music.mp3\n");
             }
             else if(game_xiaole_flag == 1)
             {
                 audio.connecttoFS(SD, "123我哈你-哈基米.mp3");
-                // Serial.printf("xiaoxiaole_music.mp3\n");
+            }
+            else if(game_pvz_flag == 1)
+            {
+                audio.connecttoFS(SD, "植物大战僵尸-背景乐.mp3");
             }
             else
             {

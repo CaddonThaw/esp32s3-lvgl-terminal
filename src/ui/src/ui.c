@@ -610,6 +610,14 @@ void ui_event_GamePvzButton(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_GameSon, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_GameSon_screen_init);
         _ui_screen_delete(&ui_Game);
+        ui_gameson_clear();
+        pvz_start();
+        start_flag=1;play_flag = 1;
+        game_pvz_flag = 1;
+        if(lv_obj_has_state(ui_StartMusic, LV_STATE_CHECKED))
+        {
+            lv_obj_clear_state(ui_StartMusic, LV_STATE_CHECKED);
+        }   
     }
 }
 
@@ -624,6 +632,7 @@ void ui_event_GameSonBackToGame(lv_event_t * e)
         game_yang_flag = 0;
         game_2048_flag = 0;
         game_xiaole_flag = 0;
+        game_pvz_flag = 0;
     }
 }
 
